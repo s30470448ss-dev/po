@@ -1,3 +1,18 @@
+/* 手機版樣式：螢幕寬度小於 768px 時套用 */
+@media (max-width: 768px) {
+    .headerchar {
+        display: none; /* 隱藏所有導覽文字連結 */
+    }
+
+    .header img {
+        height: 120px; /* 可依手機畫面縮小 logo */
+    }
+
+    .header {
+        justify-content: center; /* 讓 logo 置中 */
+    }
+}
+
 
 .pnlm-hotspot svg {
     display: none !important;
@@ -47,3 +62,4 @@
 .logo:hover {
     transform: scale(1.05);
 }
+
