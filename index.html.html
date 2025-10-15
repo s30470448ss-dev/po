@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巧彤室內設計-三重區集賢路3D展示</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <link rel="stylesheet" type="text/css" href="123.css"/>
+    <style>
+        #panorama {
+            width: 98.5vw;
+            height: 85vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a class="headerchar" href="https://www.chiautung.com.tw/paper/other_page.php?id=307#left_page">關於巧彤</a>
+        <a class="headerchar" href="https://www.chiautung.com.tw/paper/services_index.php?title_id=308#left_page">服務項目</a>
+        <a class="headerchar" href="https://www.chiautung.com.tw/paper/other_page.php?id=309#left_page">接案流程</a>
+        <a class="logo" href="https://www.chiautung.com.tw/">
+            <img src="logo-01.png" style="height:180px; object-fit:contain">
+        </a>
+        <a class="headerchar" href="https://www.chiautung.com.tw/paper/share_index.php?title_id=310#left_page">最新消息</a>
+        <a class="headerchar" href="https://www.chiautung.com.tw/workshow/index.php?title_id=311#left_page">作品介紹</a>
+        <a class="headerchar" href="https://www.chiautung.com.tw/paper/inquiry_index.php?title_id=312#left_page">線上估價</a>
+    </div>
+    <div id="panorama"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <script>
+        pannellum.viewer('panorama', {
+            // 設定預設場景
+            "default": {
+                "firstScene": "livingRoom", // 初始載入的場景 ID
+                "sceneFadeDuration": 1000 ,// 場景切換的淡入淡出時間 (毫秒)
+                // "hotSpotDebug":true
+            },
+
+            // 定義所有場景
+            "scenes": {
+                // 客廳場景
+                "livingRoom": {
+                    "hfov": 100, // 水平視角
+                    "pitch":-3.2,
+                    "yaw":142.6,
+                    "panorama": "livingRoom.jpg",
+                    
+                    "hotSpots": [
+                        {
+                            "pitch": -4.8, 
+                            "yaw": 106.3, 
+                            "type": "scene", 
+                            "text": "前往通道",
+                            "sceneId": "hallway",
+                            "tatgetPitch":-1,
+                            "targetYaw":94
+                        },
+                        {
+                            "pitch": -11, 
+                            "yaw": 18, 
+                            "type": "info", 
+                            "text": "廚房",
+                        },
+                        {
+                            "pitch": -7.5, 
+                            "yaw": 55, 
+                            "type": "info", 
+                            "text": "小孩房 a",
+                        }
+                    ]
+                },
+
+                // 主臥室場景
+                "bedRoom": {
+                    "hfov": 110,
+                    "pitch":-11.6,
+                    "yew":74.3,
+                    "panorama": "bedRoom.jpg", 
+                    
+                    "hotSpots": [
+                        {
+                            "pitch": -7.5,
+                            "yaw": 260,
+                            "type": "scene",
+                            "text": "返回通道",
+                            "sceneId": "hallway",
+                            "targetPitch": -1,
+                            "targetYaw": 94
+                        },
+                        {
+                            "pitch": -10.5,
+                            "yaw": 240,
+                            "type": "scene",
+                            "text": "進入主浴",
+                            "sceneId": "bathRoom2",
+                            "targetPitch": -1,
+                            "targetYaw": 94
+                        }
+                    ]
+                },
+                
+                // 客浴室場景
+                "bathRoom": {
+                    "hfov": 110,
+                    "pitch":-11.6,
+                    "yew":74.3,
+                    "panorama": "bathRoom.jpg", 
+                    
+                    "hotSpots": [
+                        {
+                            "pitch": -10,
+                            "yaw": 204,
+                            "type": "scene",
+                            "text": "返回通道",
+                            "sceneId": "hallway",
+                            "targetPitch": -1,
+                            "targetYaw": 94
+                        }
+                    ]
+                },
+                // 主浴室場景
+                "bathRoom2": {
+                    "hfov": 110,
+                    "pitch":-11.6,
+                    "yew":74.3,
+                    "panorama": "bathRoom2.jpg", 
+                    "hotSpots": [
+                        {
+                            "pitch": -11.5,
+                            "yaw": 270,
+                            "type": "scene",
+                            "text": "返回主臥",
+                            "sceneId": "bedRoom",
+                            "targetPitch": -1,
+                            "targetYaw": 94
+                        }
+                    ]
+                },
+                // 走廊
+                "hallway": {
+                    "hfov": 110,
+                    "panorama": "1.jpg",
+                    
+                    "hotSpots": [
+                        {
+                            "pitch": -7.3,
+                            "yaw": 275.5,
+                            "type": "scene",
+                            "text": "返回客廳",
+                            "sceneId": "livingRoom",
+                            "targetPitch": -3.2,
+                            "targetYaw": 142.6
+                        },
+                        {
+                            "pitch": -10.7,
+                            "yaw": 24.5,
+                            "type": "scene",
+                            "text": "進入主臥",
+                            "sceneId": "bedRoom",
+                            "targetPitch": -3.2,
+                            "targetYaw": 142.6
+                        },
+                        {
+                            "pitch": -11.8,
+                            "yaw": 85.6,
+                            "type": "scene",
+                            "text": "進入客浴",
+                            "sceneId": "bathRoom",
+                            "targetPitch": 0,
+                            "targetYaw": 52
+                        },
+                        {
+                            "pitch": -14, 
+                            "yaw": 160, 
+                            "type": "info", 
+                            "text": "小孩房 b",
+                        }
+                    ]
+                        
+            }
+        }});
+        
+    </script>
+</body>
+</html>
